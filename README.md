@@ -1,0 +1,1 @@
+# plugins-lightbox-block
