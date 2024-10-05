@@ -29,8 +29,11 @@
 				{
 					"type": "image",
 					"thumbnail": "https://bblockswp.com/wp-content/demo/img/green-hill.jpg",
+					"thumbCaption": "",
 					"content": "https://bblockswp.com/wp-content/demo/img/green-hill.jpg",
-					"caption": "Caption Here"
+					"contentCaption": "",
+					"caption": "Caption Here",
+					"importCaption": false
 				}
 			]
 		},
