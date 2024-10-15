@@ -95,7 +95,7 @@ if (function_exists('lbb_fs')) {
 
     require_once LBB_DIR_PATH . 'inc/block.php';
 
-// Light Box
+    // Light Box
     if (!class_exists('LBBPlugin')) {
         class LBBPlugin
         {
