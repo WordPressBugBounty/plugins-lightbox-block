@@ -2,7 +2,7 @@
 class FS_Lite{
 
     protected $prefix = '';
-    protected $config = '';
+    protected $config = null;
     protected $base_name = null;
     protected $plugin_name = '';
     protected $product = "";
@@ -96,9 +96,6 @@ class FS_Lite{
 
     function get_fs_accounts($user_id = null,  $user_data = [], $site = null){
         $fs_accounts = get_option('fs_accounts', []);
-        if(!is_array($fs_accounts)){
-            $fs_accounts = [];
-        }
         if(!array_key_exists('id_slug_type_path_map', $fs_accounts)){
             $fs_accounts['id_slug_type_path_map'] = [];
         }

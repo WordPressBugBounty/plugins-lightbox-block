@@ -2,7 +2,7 @@
 
 /**
  * @package     bPlugins
- * @copyright   Copyright (c) 2015, bPlugins LLC.
+ * @copyright   Copyright (c) 2015, bPlugins.
  * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
  * @since       1.0.0
  */
@@ -15,7 +15,7 @@ if ( !class_exists( 'BPluginsFSLite' ) ) {
 
         public $prefix = '';
 
-        protected $config = [];
+        protected $config = null;
 
         protected $__FILE__ = __FILE__;
 
@@ -66,6 +66,16 @@ if ( !class_exists( 'BPluginsFSLite' ) ) {
 
         function can_use_premium_code() {
             return $this->is_premium();
+        }
+
+        function set_basename( $uninstall, $__FILE__ ) {
+            $basename = basename( $__FILE__ );
+            if ( is_plugin_active( $this->config->slug . '/' . $basename ) ) {
+                deactivate_plugins( $this->config->slug . '/' . $basename );
+            }
+            if ( is_plugin_active( $this->config->slug . '-pro/' . $basename ) ) {
+                deactivate_plugins( $this->config->slug . '-pro/' . $basename );
+            }
         }
 
     }

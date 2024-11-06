@@ -3,8 +3,8 @@ Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Requires at least: 6.0+
-Tested up to: 6.6.1
-Stable tag: 1.1.22 
+Tested up to: 6.6.2
+Stable tag: 1.1.23
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -18,7 +18,7 @@ An animated, easy-to-use, feature-rich, Lightbox Block popup plugin for any web 
 
 You can easily create an image gallery, audio gallery, video gallery and content gallery using a LightBox block.
 
-**[Demos](https://bplugins.com/products/lightbox-block/#demos)**
+**[Demos](https://bplugins.com/products/lightbox-block/#demos) || [Get Pro Version](https://bplugins.com/products/lightbox-block/#pricing)**
 
 
 = Features =
@@ -141,6 +141,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.1.23 - 6 Nov, 24 =
+* The issue with undefined CSS styles has been resolved.
+
 = 1.1.22 - 5 Oct 24 =
 * New feature added: Import caption media.
 
@@ -240,6 +243,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.1.23 - 6 Nov, 24 =
+* The issue with undefined CSS styles has been resolved.
 
 = 1.1.22 - 5 Oct 24 =
 * New feature added: Import caption media.

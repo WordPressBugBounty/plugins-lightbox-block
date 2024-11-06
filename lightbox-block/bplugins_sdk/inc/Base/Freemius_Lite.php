@@ -2,12 +2,13 @@
 
 if(!class_exists('Freemius_Lite')){
     class Freemius_Lite {
-        protected $api_endpoint = 'https://api.bplugins.com/wp-json/freemius/v1/middleware/timde';
-        // protected $api_endpoint = 'http://localhost/freemius/wp-json/freemius/v1/middleware/time';
+        protected $api_endpoint = 'https://api.bplugins.com/wp-json/freemius/v1/middleware/';
+        // protected $api_endpoint = 'http://localhost/freemius/wp-json/freemius/v1/middleware/';
         public $api = null;
         protected $_scope = null;
         public $headers = [];
         function __construct($scope = null, $id = null, $public_key = null, $secret_key = null){
+            $this->api_endpoint .= time();
             if($scope && $id && $public_key){
                 $this->headers = $this->generate_authorization_header('', $scope, $id, $public_key, $secret_key);
             }
@@ -93,6 +94,8 @@ if(!class_exists('Freemius_Lite')){
             
             $headers = $this->generate_authorization_header('/permissions.json?sdk_version=2.5.12&url='.site_url(), 'install', $site->install_id, $site->public_key, $site->secret_key);
 
+            // return ['message' => $params];
+
             $result = $this->_permission_update($params, $headers);
 
             if( isset($result->data->error) || (isset($result->data->code) && ($result->data->code === 'rest_invalid_json' || $result->data->code === 'unauthorized_access'))){
@@ -107,10 +110,11 @@ if(!class_exists('Freemius_Lite')){
                 $fs_accounts['plugin_data'][$config->slug]['is_site_tracking_allowed'] = $result->data->permissions->site;
                 $fs_accounts['plugin_data'][$config->slug]['is_events_tracking_allowed'] = $result->data->permissions->site;
                 $fs_accounts['plugin_data'][$config->slug]['is_extensions_tracking_allowed'] = $result->data->permissions->extensions;
+                $fs_accounts['just_testing'] = $result->data->permissions;
                 update_option('fs_accounts', $fs_accounts);
                 return [
                     'success' => true,
-                    'data' => $result
+                    'data' => $fs_accounts
                 ];
             }
             
@@ -127,8 +131,8 @@ if(!class_exists('Freemius_Lite')){
                 'path' => $path,
                 'scope' => $scope,
                 'id' => $id,
-                'public-key' => $public_key,
-                'secret-key' => $secret_key,
+                'public' => $public_key,
+                'secret' => $secret_key,
                 'Content-Type' => 'application/json'
             );
             return $headers;     

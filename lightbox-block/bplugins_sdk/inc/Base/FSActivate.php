@@ -73,7 +73,9 @@ class FSActivate extends FS_LITE{
             $fs_accounts = $this->get_fs_accounts();
             if(isset($info['is_skip_activation']) && $info['is_skip_activation']){
                 $site = $this->get_data();
-                if((boolean) $site->secret_key && (boolean) $site->public_key){
+                $secret_key = (boolean) $site->secret_key;
+                $public_key = (boolean) $site->public_key;
+                if($secret_key && $public_key){
                     if(isset($fs_accounts['plugin_data'][$this->config->slug]['is_anonymous'])){
                         unset($fs_accounts['plugin_data'][$this->config->slug]['is_anonymous']);
                     }
@@ -201,7 +203,7 @@ class FSActivate extends FS_LITE{
             }
         }
         
-        wp_send_json_success(wp_parse_args( wp_parse_args($this->extend_config(), ['result' => $result]), (array) $this->config ));
+        wp_send_json_success(wp_parse_args( wp_parse_args($this->extend_config(), []), (array) $this->config ));
     }
 
    function extend_config(){
@@ -244,7 +246,7 @@ class FSActivate extends FS_LITE{
             'user_first_name'=> $user->user_firstname,
             'user_last_name'=> $user->user_lastname,
             'plugin_name' => $this->plugin_name,
-            'plugin_data' => $plugin_data,
+            'data' => $plugin_data, // current plugin data (in freemus sdk, here all the plugins data)
             'site' => $site
         ];
     }
