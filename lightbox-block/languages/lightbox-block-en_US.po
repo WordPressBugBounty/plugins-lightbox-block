@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-06T08:28:09+00:00\n"
+"POT-Creation-Date: 2024-11-07T03:49:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: lightbox\n"
@@ -142,14 +142,14 @@ msgstr ""
 #: dist/editor.js:2080
 #: dist/editor.js:14114
 #: dist/editor.js:14299
-#: dist/editor.js:15945
+#: dist/editor.js:15947
 msgid "Button"
 msgstr ""
 
 #: dist/editor.js:1
 #: dist/editor.js:2081
 #: dist/editor.js:14123
-#: dist/editor.js:15943
+#: dist/editor.js:15945
 msgid "Gallery"
 msgstr ""
 
@@ -675,7 +675,7 @@ msgid "Space between icon & text"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:15940
+#: dist/editor.js:15942
 msgid "Select a Lightbox Type"
 msgstr ""
 
