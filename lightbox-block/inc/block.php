@@ -42,6 +42,7 @@ if(!class_exists('LBBBlock')) {
 
         public function render($attributes)
         {
+            $id = wp_unique_id( 'lbbLightBox-' );
             extract($attributes);
 
             $className = $className ?? '';
@@ -72,10 +73,10 @@ if(!class_exists('LBBBlock')) {
             }
             ?>
 
-            <div class='<?php echo esc_attr($lbbBlockClassName); ?>' id='lbbLightBox-<?php echo esc_attr($cId) ?>' data-attributes='<?php echo esc_attr(wp_json_encode($attributes)); ?>' data-content-indexs="<?php echo esc_attr(wp_json_encode(array_keys($contentBlock))) ?>" data-nonce='<?php echo esc_attr(wp_json_encode(wp_create_nonce('wp_ajax'))); ?>'></div>
+            <div class='<?php echo esc_attr($lbbBlockClassName); ?>' id='<?php echo esc_attr( $id ) ?>' data-attributes='<?php echo esc_attr(wp_json_encode($attributes)); ?>' data-content-indexs="<?php echo esc_attr(wp_json_encode(array_keys($contentBlock))) ?>" data-nonce='<?php echo esc_attr(wp_json_encode(wp_create_nonce('wp_ajax'))); ?>'></div>
 
                 <?php foreach ($contentBlock as $index => $block) {?>
-                    <div class="lbbItemContent" id="content-<?php echo esc_attr($cId . '-' . $index) ?>">
+                    <div class="lbbItemContent" id="<?php echo esc_attr($id . '-content-' . $index) ?>">
                         <?php echo wp_kses_post($block); ?>
                     </div>
                 <?php }?>
