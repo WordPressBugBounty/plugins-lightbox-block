@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Lightbox block
  * Description: Lightbox block is an excellent choice for your WordPress Lightbox Block.
- * Version: 1.1.28
+ * Version: 1.1.29
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -27,7 +27,7 @@ if (function_exists('lbb_fs')) {
 } else {
 
     // Constant
-    define( 'LBB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.28' );
+    define( 'LBB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.29' );
     define('LBB_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
     define('LBB_DIR_URL', plugin_dir_url(__FILE__));
     define('LBB_DIR_PATH', plugin_dir_path(__FILE__));
