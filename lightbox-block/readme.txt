@@ -2,8 +2,8 @@
 Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
-Tested up to: 6.7.2
-Stable tag: 1.1.29
+Tested up to: 6.8
+Stable tag: 1.1.30
 Requires at least: 6.5+
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -141,6 +141,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.1.30 - 30 April, 2025 =
+* Compatible with WordPress 6.8;
+
 = 1.1.29 - 11 April, 2025 =
 * Some issues fixed.
 
@@ -261,6 +264,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.1.30 - 30 April, 2025 =
+* Compatible with WordPress 6.8;
 
 = 1.1.29 - 11 April, 2025 =
 * Some issues fixed.
