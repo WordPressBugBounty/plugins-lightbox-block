@@ -2,7 +2,7 @@
 Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
-Tested up to: 6.8
+Tested up to: 6.8.1
 Stable tag: 1.1.30
 Requires at least: 6.5+
 Requires PHP: 7.1
