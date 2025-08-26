@@ -2,16 +2,16 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Lightbox block 1.1.31\n"
+"Project-Id-Version: Lightbox block 1.1.32\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/lightbox-block-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-05T06:43:40+00:00\n"
+"POT-Creation-Date: 2025-08-26T12:26:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: lightbox\n"
 
 #. Plugin Name of the plugin
@@ -34,27 +34,78 @@ msgstr ""
 msgid "http://bplugins.com"
 msgstr ""
 
-#: inc/block.json
+#: inc/AdminMenu-free.php:18
+#: inc/AdminMenu-free.php:19
+#: inc/AdminMenu-pro.php:18
+#: inc/AdminMenu-pro.php:19
+#: inc/custom-shortcode.php:21
+#: inc/custom-shortcode.php:22
+msgid "Lightbox Block"
+msgstr ""
+
+#: inc/AdminMenu-pro.php:30
+#: inc/AdminMenu-pro.php:31
+msgid "ShortCode"
+msgstr ""
+
+#: inc/custom-shortcode.php:23
+#: inc/custom-shortcode.php:24
+msgid "Add New Lightbox"
+msgstr ""
+
+#: inc/custom-shortcode.php:25
+msgid "Edit"
+msgstr ""
+
+#: inc/custom-shortcode.php:26
+msgid "New"
+msgstr ""
+
+#: inc/custom-shortcode.php:27
+msgid "View"
+msgstr ""
+
+#: inc/custom-shortcode.php:28
+msgid "Publish Slider"
+msgstr ""
+
+#: inc/custom-shortcode.php:29
+msgid "Update Slider"
+msgstr ""
+
+#: inc/custom-shortcode.php:30
+msgid "Lightbox trashed"
+msgstr ""
+
+#: inc/custom-shortcode.php:31
+msgid "Search"
+msgstr ""
+
+#: inc/custom-shortcode.php:32
+msgid "Sorry, we couldn't find the that you are looking for."
+msgstr ""
+
+#: build/block.json
 msgctxt "block title"
 msgid "Lightbox Block"
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block description"
 msgid "Lightbox block is an excellent choice for your WordPress Lightbox Block."
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block keyword"
 msgid "block"
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block keyword"
 msgid "lightbox"
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block keyword"
 msgid "gutenberg-block"
 msgstr ""
