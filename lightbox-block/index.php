@@ -58,11 +58,11 @@ if ( function_exists( 'lbb_fs' ) ) {
                     ),
                     'menu'                => ( LBB_IS_PRO ? array(
                         'slug'       => 'lightbox-block-dashboard',
-                        'first-path' => 'admin.php?page=lightbox-block-dashboard#/welcome',
+                        'first-path' => 'admin.php?page=lightbox-block-dashboard#/pricing',
                         'support'    => false,
                     ) : array(
                         'slug'       => 'lightbox-block-dashboard',
-                        'first-path' => 'tools.php?page=lightbox-block-dashboard#/welcome',
+                        'first-path' => 'tools.php?page=lightbox-block-dashboard#/pricing',
                         'support'    => false,
                         'parent'     => array(
                             'slug' => 'tools.php',

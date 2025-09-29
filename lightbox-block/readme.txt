@@ -1,4 +1,4 @@
-=== LightBox Block – Display Media in Lightbox Overlay ===
+=== Lightbox Block – Display Images, Audio, and Video in Popups ===
 Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
@@ -9,85 +9,82 @@ Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-
-With the LightBox Block plugin, you can effortlessly showcase images, audio, video, and content in a popup format.
+Lightbox Block lets you display images, audio, video, and custom content in responsive lightbox galleries or media popups.
 
 == Description ==
 
-An animated, easy-to-use, feature-rich, Lightbox Block popup plugin for any web content such as images, audio, video, and much more.
+**Create Responsive Lightbox Popups and Galleries for Images, Audio, Video, PDFs, Iframes, and Custom Content Directly in the WordPress Block Editor.**
 
-You can easily create an image gallery, audio gallery, video gallery and content gallery using a LightBox block.
+[Lightbox Block](https://bplugins.com/products/lightbox-block/) | [Documentation](https://bplugins.com/docs/lightbox-block/) | [Pricing](https://bplugins.com/products/lightbox-block/#pricing) | [Support](https://bplugins.com/support/) | [Demo](https://bplugins.com/products/lightbox-block/#demos)
 
-**[Demos](https://bplugins.com/products/lightbox-block/#demos) || [Get Pro Version](https://bplugins.com/products/lightbox-block/#pricing)**
+[Lightbox Block](https://bplugins.com/products/lightbox-block/) is a Gutenberg plugin that helps you display different types of media inside a popup. You can create image galleries, audio playlists, video showcases, or show any custom content in a lightbox. The block is simple to use and does not require any coding knowledge.
 
-
-= Features =
-
-- There are two types of Lightbox: Gallery and Button.
-- The gallery lightbox offers four content types: Image, Audio, Video, and Content.
-- You can add multiple blocks of different content types.
-- The Button Lightbox contains content types such as image, audio, video, and content.
-- Button customization offers numerous options.
-- Supports YouTube, Vimeo, and Video.
-- Automatically connects to the gallery/photo.
-- Mobile responsive for a seamless experience across all devices.
-- Supports different modes like slideshow or fullscreen.
-- Each popup comes with a caption.
-- Dedicated support for all your queries.
-- Each gallery can be displayed separately.
-- Two layout options are available: default and Masonry.
-- Customize layout options include column gap, row gap, and layout selection. 
+The plugin is fully responsive, so your popups look good on desktops, tablets, and mobile devices. You can customize layouts, choose from different styles, and adjust settings to match your design. It is useful for portfolios, tutorials, product galleries, media libraries, and any website where you want to highlight content in a clean and interactive way.
 
 
-= Pro Features =
+=== Key Features –  Free Version ===
+- **Five Lightbox Types** – Choose from Gallery, Button, Audio, Video, and Content lightboxes to display different kinds of media.
+- **Gallery Content Support** – Build galleries with images, audio, video, or custom content blocks.
+- **Multiple Blocks on a Page** – Add different lightbox types within the same page without conflicts.
+- **Button Lightbox** – Trigger popups with customizable buttons, allowing flexible placement anywhere in your content.
+- **Embed External Media** – Supports YouTube, Vimeo, and self-hosted videos for quick video playback.
+- **Mobile Responsive** – Popups automatically adapt to all screen sizes for a seamless experience on phones and tablets.
+- **Slideshow & Fullscreen Modes** – Present galleries as interactive slideshows or allow users to expand media fullscreen.
+- **Captions Support** – Add titles or descriptions to each popup for context.
+- **Independent Galleries** – Display multiple galleries on one site, each working separately.
+- **Layout Options** – Choose between the default grid or the Masonry layout for creative displays.
+- **Custom Layout Controls** – Adjust row/column gaps and layout spacing for better design control.
 
-- **Content type image, audio, video, content, pdf, Iframe**
-- **Show caption and overly color**
-- **Popup slide autostart**
-- **Two types of mouse-wheel -- zoom, slide**
-- **Four type of slide effect -- Default, Slide, CorssFade, Classic**
-- **Popup topbar info count show**
-- **Popup topbar shows Zoom In, Zoom Out, Toggle Zoom Level, Rotate Content Clock wish, Rotate Clock Wish, Flip Horizontally, Flip Vertically and Fullscreen mode**
-- **Popup middle topbar shows Facebook share, Twitter share, download, slideshows, thumbnails and close.**
-- **Popup thumbnails show**
-- **Two type of thumbnails -- classic and modern**
-- **Player controls play large, restart, rewind, play, Fast forward, Progress, Current Time, Duration, Mute, Volume, Pip, Airplay, Settings, Download, Full-Screen**
-- **Four types of hover effects -- Default, Zoom In, Zoom Out, Rotate In, Rotate Out, Shine**
-- **Gallery Item border radius**
-- **Player controls colors**
-- **Slider layout**
-- **New option added: change modal background color**
+=== LightBox Block Pro – Unlock Premium Features ===
+The [Pro version](https://bplugins.com/products/lightbox-block/#pricing) adds more flexibility and advanced controls for managing video playback and customization:
 
-= How to use =
-- First, install the Lightbox block plugin
-- Add the Lightbox block from the block category called "Widgets" in the Gutenberg editor.
-- You can change block settings from the right-side settings sidebar.
-- Enjoy!
+==What’s New in the Pro Version?==
 
-* For installation help click on Installation Tab
+- **Shortcode Support** – Insert lightboxes anywhere on your site, even outside Gutenberg, using shortcodes.
+- **Extended Media Types** – Go beyond basic content by embedding PDFs, iframes, YouTube videos, and custom HTML alongside images, audio, and video.
+- **Custom Overlay & Captions** – Change caption style and overlay colors to match your site’s branding.
+- **Autoplay Slideshows** – Automatically start popup slideshows for a smooth presentation.
+- **Mouse-Wheel Navigation** – Let users scroll with their mouse wheel to zoom or move between slides.
+- **Advanced Slide Effects** – Enhance transitions with Slide, CrossFade, Classic, or Default effects.
+- **Topbar Controls** – Show slide counts and allow zooming, rotating (clockwise/counter-clockwise), flipping, and fullscreen toggle directly in the popup topbar.
+- **Toolbar Actions** – Add sharing (Facebook, Twitter), downloads, slideshow controls, thumbnails, and close buttons inside the popup.
+- **Thumbnail Previews** – Display gallery thumbnails in Classic or Modern styles for easy navigation.
+- **Advanced Media Player Controls** – Full audio/video control panel including play/pause, restart, rewind, fast-forward, progress bar, duration, mute, volume, PiP, Airplay, settings, download, and fullscreen.
+- **Multiple Audio Players** – Choose from four different audio player designs to suit your style.
+- **Hover Effects** – Add engaging hover animations such as Zoom, Rotate, or Shine for gallery items.
+- **Gallery Styling Options** – Customize border radius and choose from five aspect ratios (Landscape, Square, Horizontal, Vertical, Portrait).
+- **Color & Size Controls** – Personalize the modal background, close icon colors, and adjust modal/icon sizes per device.
+- **Slider Layout** – Use a slider format for galleries instead of grid or masonry when needed.
 
+
+[Try the Pro Version](https://bplugins.com/products/lightbox-block/#pricing) – Unlock all premium features today!
+
+=== How to Use Lightbox Block – Quick Start Guide ===
+
+Follow these steps:
+
+===Step-by-Step Setup===
+1. Install and activate Lightbox Block.
+2. In the Gutenberg editor, add a Lightbox Block from the Widgets section.
+3. Select your lightbox type (Gallery, Button, Audio, Video, Content).
+4. Upload media or embed from YouTube/Vimeo.
+5. Adjust layout, spacing, and display options from the block sidebar.
+(Optional) Upgrade to Pro for advanced customization, shortcode support, and extended media types.
+6. Publish your post or page and enjoy your new interactive lightbox!
+
+That’s it!
+
+[Live Demo](https://bplugins.com/products/lightbox-block/#demos) | [Try the Pro Version](https://bplugins.com/products/lightbox-block/#pricing)
 
 = Feedback =
 - Did you Like that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
 
-
-= ⭐ Check out the Parent Plugin of this plugin- =
-
-🔥 **[b Blocks](https://bblockswp.com/)** – Best gutenberg blocks collections for WordPress.
-
-
-= ⭐ Check out our other WordPress Plugins- =
-
-🔥 **[Html5 Audio Player](https://bplugins.com/products/html5-audio-player)** – Best audio player plugin for WordPress.
-
-🔥 **[Html5 Video Player](https://bplugins.com/products/html5-video-player)** – Best video player plugin for WordPress.
-
-🔥 **[PDF Poster](https://bplugins.com/products/pdf-poster)** – A fully-featured PDF Viewer Plugin for WordPress.
-
-🔥 **[StreamCast](https://bplugins.com/products/streamcast-radio-player)** – A fully-featured Radio Player Plugin for WordPress.
-
-🔥 **[3D Viewer](https://bplugins.com/products/3d-viewer)** – Display interactive 3D models on the webs.
-
+=== Check out our other WordPress Plugins ===
+- [Html5 Video Player](https://bplugins.com/products/html5-video-player) – Best video player plugin for WordPress.
+- [HTML5 Audio Player](https://bplugins.com/products/html5-audio-player/) – Best audio player plugin for WordPress.
+- [PDF Poster](https://bplugins.com/products/pdf-poster/) – A fully-featured PDF Viewer Plugin for WordPress.
+- [StreamCast](https://bplugins.com/products/streamcast-radio-player/) – A fully-featured Radio Player Plugin for WordPress.
+- [3D Viewer](https://bplugins.com/products/3d-viewer/) – Display interactive 3D models on the webs.
 
 == Installation ==
 
@@ -129,19 +126,27 @@ You can use unlimited times as you want.
 
 You can post your questions on the [support forum here](https://wordpress.org/support/plugin/lightbox-block/)
 
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the LightBox Block plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fbc25-9c57-4d33-afc2-b6b2788d48ff). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 
 == Screenshots ==
 
-1. Settings-1
-2. Settings-2
-3. Grid
-4. Popup
-5. Masonry
-6. Slider
+1. Lightbox Type
+2. Settings-1
+3. Settings-2
+4. Grid
+5. Modern
+6. Album
+7. Simple List
+8. Slider Layout
+9. YouTube
+10. Short-Code
 
 == Changelog ==
 
-= 1.1.32 - 15 July, 2025 =
+= 1.1.32 - 26 Aug, 2025 =
 * New feature coming soon;
 
 = 1.1.31 - 5 July, 2025 =
@@ -271,7 +276,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Upgrade Notice ==
 
-= 1.1.32 - 15 July, 2025 =
+= 1.1.32 - 26 Aug, 2025 =
 * New feature coming soon;
 
 = 1.1.31 - 5 July, 2025 =
