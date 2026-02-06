@@ -3,13 +3,13 @@
 /**
  * Plugin Name: Lightbox block
  * Description: Lightbox block is an excellent choice for your WordPress Lightbox Block.
- * Version: 1.1.32
+ * Version: 1.1.38
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: lightbox
- * @fs_free_only, bsdk_config.json, /inc/AdminMenu-free.php
+ * @fs_free_only, bsdk_config.json, /inc/AdminMenu-free.php, /freemius-lite
  */
 // ABS PATH
 if ( !defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ if ( function_exists( 'lbb_fs' ) ) {
     } );
 } else {
     // Constant
-    define( 'LBB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.32' ) );
+    define( 'LBB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.38' ) );
     define( 'LBB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
     define( 'LBB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'LBB_DIR_PATH', plugin_dir_path( __FILE__ ) );
@@ -47,7 +47,7 @@ if ( function_exists( 'lbb_fs' ) ) {
                     'premium_slug'        => 'lightbox-block-pro',
                     'type'                => 'plugin',
                     'public_key'          => 'pk_8346b668170b2e4c33255d896d15c',
-                    'is_premium'          => true,
+                    'is_premium'          => false,
                     'premium_suffix'      => 'Pro',
                     'has_premium_version' => true,
                     'has_addons'          => false,
@@ -57,9 +57,8 @@ if ( function_exists( 'lbb_fs' ) ) {
                         'is_require_payment' => false,
                     ),
                     'menu'                => ( LBB_IS_PRO ? array(
-                        'slug'       => 'lightbox-block-dashboard',
-                        'first-path' => 'admin.php?page=lightbox-block-dashboard#/pricing',
-                        'support'    => false,
+                        'slug'    => 'lightbox-block-dashboard',
+                        'support' => false,
                     ) : array(
                         'slug'       => 'lightbox-block-dashboard',
                         'first-path' => 'tools.php?page=lightbox-block-dashboard#/pricing',
@@ -89,11 +88,25 @@ if ( function_exists( 'lbb_fs' ) ) {
             public function __construct() {
                 $this->load_classes();
                 add_action( 'init', [$this, 'onInit'] );
+                add_action( 'enqueue_block_editor_assets', [$this, 'enqueueBlockEditorAssets'] );
                 add_action( 'enqueue_block_assets', [$this, 'enqueueBlockAssets'], 10 );
-                add_action( 'wp_ajax_lbbPipeChecker', [$this, 'lbbPipeChecker'] );
-                add_action( 'wp_ajax_nopriv_lbbPipeChecker', [$this, 'lbbPipeChecker'] );
-                add_action( 'admin_init', [$this, 'registerSettings'] );
-                add_action( 'rest_api_init', [$this, 'registerSettings'] );
+                add_action( 'wp_ajax_bpllb_get_image_id', [$this, 'bpllb_get_image_id'] );
+                add_action( 'wp_enqueue_scripts', [$this, 'lbb_custom_popup'] );
+            }
+
+            public function lbb_custom_popup() {
+                wp_enqueue_script(
+                    'lbb-custom-popup',
+                    LBB_DIR_URL . 'build/custom-popup.js',
+                    [],
+                    LBB_PLUGIN_VERSION
+                );
+                wp_enqueue_style(
+                    'lbb-custom-popup',
+                    LBB_DIR_URL . 'build/custom-popup.css',
+                    [],
+                    LBB_PLUGIN_VERSION
+                );
             }
 
             function onInit() {
@@ -156,6 +169,10 @@ if ( function_exists( 'lbb_fs' ) ) {
                     [],
                     LBB_PLUGIN_VERSION
                 );
+                wp_localize_script( 'lbb-plyr-script', 'bpllbMediaUrlId', [
+                    'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+                    'nonce'   => wp_create_nonce( 'bpllb_get_image_id' ),
+                ] );
             }
 
             //Class loaded
@@ -170,30 +187,32 @@ if ( function_exists( 'lbb_fs' ) ) {
                 }
             }
 
-            public function lbbPipeChecker() {
-                $nonce = $_POST['_wpnonce'];
-                if ( !wp_verify_nonce( $nonce, 'wp_ajax' ) ) {
-                    wp_send_json_error( 'Invalid Request' );
+            public function bpllb_get_image_id() {
+                check_ajax_referer( "bpllb_get_image_id", "nonce" );
+                $items = ( isset( $_GET['items'] ) ? wp_unslash( $_GET['items'] ) : '' );
+                $decoded_items = json_decode( urldecode( $items ), true );
+                if ( !is_array( $decoded_items ) ) {
+                    wp_send_json_error( [
+                        'message' => 'Invalid data',
+                    ] );
                 }
-                wp_send_json_success( [
-                    'isPipe' => ( LBB_IS_PRO ? \lbb_fs()->is__premium_only() && \lbb_fs()->can_use_premium_code() : false ),
-                ] );
+                $response = [];
+                foreach ( $decoded_items as $item ) {
+                    if ( $item['type'] == 'image' ) {
+                        $content = ( isset( $item['content'] ) ? esc_url_raw( $item['content'] ) : '' );
+                    } else {
+                        $content = ( isset( $item['thumbnail'] ) ? esc_url_raw( $item['thumbnail'] ) : '' );
+                    }
+                    $attachment_id = attachment_url_to_postid( $content );
+                    $item['id'] = $attachment_id;
+                    $response[] = $item;
+                }
+                wp_send_json_success( $response );
             }
 
-            public function registerSettings() {
-                register_setting( 'lbbUtils', 'lbbUtils', [
-                    'show_in_rest'      => [
-                        'name'   => 'lbbUtils',
-                        'schema' => [
-                            'type' => 'string',
-                        ],
-                    ],
-                    'type'              => 'string',
-                    'default'           => wp_json_encode( [
-                        'nonce' => wp_create_nonce( 'wp_ajax' ),
-                    ] ),
-                    'sanitize_callback' => 'sanitize_text_field',
-                ] );
+            public function enqueueBlockEditorAssets() {
+                wp_add_inline_script( 'lbb-lightbox-editor-script', "const lbbpipecheck=" . wp_json_encode( lbbIsPremium() ) . ';', 'before' );
+                wp_add_inline_script( 'lbb-lightbox-editor-script', "const freemiusFileCheck=" . wp_json_encode( LBB_IS_PRO ) . ';', 'before' );
             }
 
         }

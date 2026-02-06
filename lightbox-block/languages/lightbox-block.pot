@@ -1,15 +1,15 @@
-# Copyright (C) 2025 bPlugins
+# Copyright (C) 2026 bPlugins
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Lightbox block 1.1.32\n"
+"Project-Id-Version: Lightbox block 1.1.38\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/lightbox-block-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-24T10:25:02+00:00\n"
+"POT-Creation-Date: 2026-01-28T08:15:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: lightbox\n"
@@ -36,16 +36,19 @@ msgstr ""
 
 #: inc/AdminMenu-free.php:18
 #: inc/AdminMenu-free.php:19
-#: inc/AdminMenu-pro.php:18
-#: inc/AdminMenu-pro.php:19
-#: inc/custom-shortcode.php:21
-#: inc/custom-shortcode.php:22
 msgid "Lightbox Block"
 msgstr ""
 
+#: inc/AdminMenu-pro.php:17
+#: inc/AdminMenu-pro.php:18
+#: inc/custom-shortcode.php:21
+#: inc/custom-shortcode.php:22
+msgid "Lightbox"
+msgstr ""
+
+#: inc/AdminMenu-pro.php:29
 #: inc/AdminMenu-pro.php:30
-#: inc/AdminMenu-pro.php:31
-msgid "ShortCode"
+msgid "Demo and Help"
 msgstr ""
 
 #: inc/custom-shortcode.php:23
@@ -66,11 +69,11 @@ msgid "View"
 msgstr ""
 
 #: inc/custom-shortcode.php:28
-msgid "Publish Slider"
+msgid "Publish Lightbox"
 msgstr ""
 
 #: inc/custom-shortcode.php:29
-msgid "Update Slider"
+msgid "Update Lightbox"
 msgstr ""
 
 #: inc/custom-shortcode.php:30

@@ -25,20 +25,7 @@
     },
     "items": {
       "type": "array",
-      "default": [
-        {
-          "type": "image",
-          "thumbnail": "https://bblockswp.com/wp-content/demo/img/green-hill.jpg",
-          "thumbCaption": "",
-          "content": "https://bblockswp.com/wp-content/demo/img/green-hill.jpg",
-          "contentCaption": "",
-          "caption": "Caption Here",
-          "importCaption": false,
-          "altText": null,
-          "isAudioThumbnails": true,
-          "artist": "Morgan Wallen"
-        }
-      ]
+      "default": []
     },
     "audio": {
       "type": "object",
@@ -322,7 +309,11 @@
     "slider": {
       "type": "object",
       "default": {
-        "thumbs": "classic"
+        "thumbs": "classic",
+        "arrowColors": {
+          "color": "#000",
+          "bg": "transparent"
+        }
       }
     },
     "popupTheme": {
@@ -331,8 +322,8 @@
         "color": "#000",
         "size": {
           "desktop": 50,
-          "tablet": 50,
-          "mobile": 40
+          "tablet": 70,
+          "mobile": 90
         },
         "closeIconColors": {
           "color": "#fff",

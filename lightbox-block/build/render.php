@@ -13,7 +13,7 @@
     $contentBlock = [];
 
     foreach ($attributes['items'] as $index => $item) {
-        if ($item['type'] === 'content') {
+        if ($item['type'] === 'content' || $lightboxType === "content") {
             $blocks = parse_blocks($item['content']);
             $content = '';
             foreach ($blocks as $block) {

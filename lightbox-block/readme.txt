@@ -1,9 +1,9 @@
-=== Lightbox Block – Display Images, Audio, and Video in Popups ===
+=== All In One Lightbox – Display Images, Audio, and Video in Popups ===
 Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
-Tested up to: 6.8.1
-Stable tag: 1.1.32
+Tested up to: 6.9
+Stable tag: 1.1.38
 Requires at least: 6.5+
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -15,7 +15,9 @@ Lightbox Block lets you display images, audio, video, and custom content in resp
 
 **Create Responsive Lightbox Popups and Galleries for Images, Audio, Video, PDFs, Iframes, and Custom Content Directly in the WordPress Block Editor.**
 
-[Lightbox Block](https://bplugins.com/products/lightbox-block/) | [Documentation](https://bplugins.com/docs/lightbox-block/) | [Pricing](https://bplugins.com/products/lightbox-block/#pricing) | [Support](https://bplugins.com/support/) | [Demo](https://bplugins.com/products/lightbox-block/#demos)
+[Lightbox Block](https://bplugins.com/products/lightbox-block/) | [Documentation](https://bplugins.com/docs/lightbox-block/) | [Pricing](https://bplugins.com/products/lightbox-block/pricing) | [Support](https://bplugins.com/support/) | [Demo](https://bplugins.com/products/lightbox-block/#demos)
+
+https://www.youtube.com/watch?v=wgwfteRLQcc
 
 [Lightbox Block](https://bplugins.com/products/lightbox-block/) is a Gutenberg plugin that helps you display different types of media inside a popup. You can create image galleries, audio playlists, video showcases, or show any custom content in a lightbox. The block is simple to use and does not require any coding knowledge.
 
@@ -36,7 +38,7 @@ The plugin is fully responsive, so your popups look good on desktops, tablets, a
 - **Custom Layout Controls** – Adjust row/column gaps and layout spacing for better design control.
 
 === LightBox Block Pro – Unlock Premium Features ===
-The [Pro version](https://bplugins.com/products/lightbox-block/#pricing) adds more flexibility and advanced controls for managing video playback and customization:
+The [Pro version](https://bplugins.com/products/lightbox-block/pricing) adds more flexibility and advanced controls for managing video playback and customization:
 
 ==What’s New in the Pro Version?==
 
@@ -57,9 +59,11 @@ The [Pro version](https://bplugins.com/products/lightbox-block/#pricing) adds mo
 - **Slider Layout** – Use a slider format for galleries instead of grid or masonry when needed.
 
 
-[Try the Pro Version](https://bplugins.com/products/lightbox-block/#pricing) – Unlock all premium features today!
+[Try the Pro Version](https://bplugins.com/products/lightbox-block/pricing) – Unlock all premium features today!
 
 === How to Use Lightbox Block – Quick Start Guide ===
+
+https://www.youtube.com/watch?v=Rg-Y_X8deiU
 
 Follow these steps:
 
@@ -74,7 +78,7 @@ Follow these steps:
 
 That’s it!
 
-[Live Demo](https://bplugins.com/products/lightbox-block/#demos) | [Try the Pro Version](https://bplugins.com/products/lightbox-block/#pricing)
+[Live Demo](https://bplugins.com/products/lightbox-block/#demos) | [Try the Pro Version](https://bplugins.com/products/lightbox-block/pricing)
 
 = Feedback =
 - Did you Like that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
@@ -145,6 +149,24 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.1.38 - 28 Jan, 2026 =
+* Fix:I fixed the Block Editor popup issue.
+
+= 1.1.37 - 25 Jan, 2026 =
+* You need to change the gallery type and control the show or hide options.
+
+= 1.1.36 - 14 Dec, 2025 =
+* Global custom LightBox has been added;
+
+= 1.1.35 - 12 Nov, 2025 =
+* We have fixed the issue where using two sliders on the same page caused conflicts. A new feature has also been added to change the arrow color.
+
+= 1.1.34 - 9 Nov, 2025 =
+* freemius sdk update and new feature added;
+
+= 1.1.33 - 26 Oct, 2025 =
+* Fixed issues with slider layout thumbnails and popup image width.
 
 = 1.1.32 - 26 Aug, 2025 =
 * New feature coming soon;
@@ -275,6 +297,25 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 
 == Upgrade Notice ==
+
+= 1.1.38 - 28 Jan, 2026 =
+* Fix:I fixed the Block Editor popup issue.
+
+= 1.1.37 - 25 Jan, 2026 =
+* You need to change the gallery type and control the show or hide options.
+
+
+= 1.1.36 - 14 Dec, 2025 =
+* Global custom LightBox has been added;
+
+= 1.1.35 - 12 Nov, 2025 =
+* We have fixed the issue where using two sliders on the same page caused conflicts. A new feature has also been added to change the arrow color.
+
+= 1.1.34 - 9 Nov, 2025 =
+* freemius sdk update and new feature added;
+
+= 1.1.33 - 26 Oct, 2025 =
+* Fixed issues with slider layout thumbnails and popup image width.
 
 = 1.1.32 - 26 Aug, 2025 =
 * New feature coming soon;
