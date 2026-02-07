@@ -3,13 +3,13 @@
 /**
  * Plugin Name: Lightbox block
  * Description: Lightbox block is an excellent choice for your WordPress Lightbox Block.
- * Version: 1.1.38
+ * Version: 1.1.39
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: lightbox
- * @fs_free_only, bsdk_config.json, /inc/AdminMenu-free.php, /freemius-lite
+ * @fs_free_only, bsdk_config.json, /freemius-lite
  */
 // ABS PATH
 if ( !defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ if ( function_exists( 'lbb_fs' ) ) {
     } );
 } else {
     // Constant
-    define( 'LBB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.38' ) );
+    define( 'LBB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.39' ) );
     define( 'LBB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
     define( 'LBB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'LBB_DIR_PATH', plugin_dir_path( __FILE__ ) );
@@ -56,17 +56,11 @@ if ( function_exists( 'lbb_fs' ) ) {
                         'days'               => 7,
                         'is_require_payment' => false,
                     ),
-                    'menu'                => ( LBB_IS_PRO ? array(
-                        'slug'    => 'lightbox-block-dashboard',
-                        'support' => false,
-                    ) : array(
-                        'slug'       => 'lightbox-block-dashboard',
-                        'first-path' => 'tools.php?page=lightbox-block-dashboard#/pricing',
+                    'menu'                => array(
+                        'slug'       => 'edit.php?post_type=lbb',
+                        'first-path' => 'edit.php?post_type=lbb&page=lightbox-block#/pricing',
                         'support'    => false,
-                        'parent'     => array(
-                            'slug' => 'tools.php',
-                        ),
-                    ) ),
+                    ),
                 );
                 $lbb_fs = ( LBB_IS_PRO ? fs_dynamic_init( $lbbConfig ) : fs_lite_dynamic_init( $lbbConfig ) );
             }
@@ -92,6 +86,12 @@ if ( function_exists( 'lbb_fs' ) ) {
                 add_action( 'enqueue_block_assets', [$this, 'enqueueBlockAssets'], 10 );
                 add_action( 'wp_ajax_bpllb_get_image_id', [$this, 'bpllb_get_image_id'] );
                 add_action( 'wp_enqueue_scripts', [$this, 'lbb_custom_popup'] );
+                add_filter(
+                    'plugin_action_links',
+                    [$this, 'plugin_action_links'],
+                    10,
+                    2
+                );
             }
 
             public function lbb_custom_popup() {
@@ -177,14 +177,8 @@ if ( function_exists( 'lbb_fs' ) ) {
 
             //Class loaded
             public function load_classes() {
-                if ( LBB_IS_PRO ) {
-                    require_once plugin_dir_path( __FILE__ ) . '/inc/AdminMenu-pro.php';
-                } else {
-                    require_once plugin_dir_path( __FILE__ ) . '/inc/AdminMenu-free.php';
-                }
-                if ( LBB_IS_PRO && lbbIsPremium() ) {
-                    require_once plugin_dir_path( __FILE__ ) . '/inc/custom-shortcode.php';
-                }
+                require_once plugin_dir_path( __FILE__ ) . '/inc/AdminMenu.php';
+                require_once plugin_dir_path( __FILE__ ) . '/inc/custom-shortcode.php';
             }
 
             public function bpllb_get_image_id() {
@@ -213,6 +207,19 @@ if ( function_exists( 'lbb_fs' ) ) {
             public function enqueueBlockEditorAssets() {
                 wp_add_inline_script( 'lbb-lightbox-editor-script', "const lbbpipecheck=" . wp_json_encode( lbbIsPremium() ) . ';', 'before' );
                 wp_add_inline_script( 'lbb-lightbox-editor-script', "const freemiusFileCheck=" . wp_json_encode( LBB_IS_PRO ) . ';', 'before' );
+            }
+
+            public function plugin_action_links( $links, $file ) {
+                if ( plugin_basename( __FILE__ ) == $file ) {
+                    $dashboardLink = admin_url( 'edit.php?post_type=lbb&page=lightbox-block' );
+                    $links['dashboard'] = sprintf(
+                        '<a href="%s" style="%s" target="__blank">%s</a>',
+                        $dashboardLink,
+                        'color:#4527a4;font-weight:bold',
+                        __( 'Dashboard!', 'slider' )
+                    );
+                }
+                return $links;
             }
 
         }
