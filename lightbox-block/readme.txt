@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Tested up to: 6.9
-Stable tag: 1.1.39
+Stable tag: 1.1.41
 Requires at least: 6.5+
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -150,11 +150,17 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 == Changelog ==
 
+= 1.1.41 - 6 April, 2026 =
+* Added a new modern dashboard;
+
+= 1.1.40 - 18 March, 2026 =
+* The slider DOM element wasn’t working properly. It’s now fixed.
+
 = 1.1.39 - 7 Feb, 2026 =
 * The free plugin now supports shortcodes.
 
-= 1.1.38 - 28 Jan, 2026 =
-* Fix: I fixed the Block Editor popup issue.
+= 2.0.8 - 22 Jan, 2026 =
+* There were some minor issues with the title and the query, but I have resolved them..
 
 = 1.1.37 - 25 Jan, 2026 =
 * You need to change the gallery type and control the show or hide options.
@@ -300,6 +306,12 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 
 == Upgrade Notice ==
+
+= 1.1.41 - 6 April, 2026 =
+* Added a new modern dashboard;
+
+= 1.1.40 - 18 March, 2026 =
+* The slider DOM element wasn’t working properly. It’s now fixed.
 
 = 1.1.39 - 7 Feb, 2026 =
 * The free plugin now supports shortcodes.

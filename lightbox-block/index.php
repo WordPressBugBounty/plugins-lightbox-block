@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Lightbox block
  * Description: Lightbox block is an excellent choice for your WordPress Lightbox Block.
- * Version: 1.1.39
+ * Version: 1.1.41
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -26,7 +26,7 @@ if ( function_exists( 'lbb_fs' ) ) {
     } );
 } else {
     // Constant
-    define( 'LBB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.39' ) );
+    define( 'LBB_PLUGIN_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.1.41' ) );
     define( 'LBB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
     define( 'LBB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'LBB_DIR_PATH', plugin_dir_path( __FILE__ ) );
@@ -38,6 +38,7 @@ if ( function_exists( 'lbb_fs' ) ) {
             if ( !isset( $lbb_fs ) ) {
                 if ( LBB_IS_PRO ) {
                     require_once dirname( __FILE__ ) . '/freemius/start.php';
+                    require_once dirname( __FILE__ ) . '/inc/LicenseActivation.php';
                 } else {
                     require_once dirname( __FILE__ ) . '/freemius-lite/start.php';
                 }
@@ -47,7 +48,7 @@ if ( function_exists( 'lbb_fs' ) ) {
                     'premium_slug'        => 'lightbox-block-pro',
                     'type'                => 'plugin',
                     'public_key'          => 'pk_8346b668170b2e4c33255d896d15c',
-                    'is_premium'          => false,
+                    'is_premium'          => true,
                     'premium_suffix'      => 'Pro',
                     'has_premium_version' => true,
                     'has_addons'          => false,

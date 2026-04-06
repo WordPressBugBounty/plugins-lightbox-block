@@ -27,7 +27,7 @@ if(!class_exists('llbAdminMenu')) {
 
             if( strpos( $hook, 'lightbox-block' ) ){
                 wp_enqueue_style( 'lbb-admin-dashboard', LBB_DIR_URL . 'build/admin-dashboard.css', [], LBB_PLUGIN_VERSION );
-                wp_enqueue_script( 'lbb-admin-dashboard', LBB_DIR_URL . 'build/admin-dashboard.js', [ 'react', 'react-dom' ], LBB_PLUGIN_VERSION, true );
+                wp_enqueue_script( 'lbb-admin-dashboard', LBB_DIR_URL . 'build/admin-dashboard.js', [ 'react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n" ], LBB_PLUGIN_VERSION, true );
                 wp_set_script_translations( 'lbb-admin-dashboard', 'lightbox', LBB_DIR_PATH . 'languages' );
             }
 
@@ -45,7 +45,9 @@ if(!class_exists('llbAdminMenu')) {
                 data-info='<?php echo esc_attr( wp_json_encode( [
                     'version' => LBB_PLUGIN_VERSION,
                     'isPremium' => lbbIsPremium(),
-                    'hasPro' => LBB_IS_PRO
+                    'hasPro' => LBB_IS_PRO,
+                    'nonce' => wp_create_nonce( 'apbCreatePage' ),
+		            'licenseActiveNonce' => wp_create_nonce( 'bPlLicenseActivation' )
                 ] ) ); ?>'
             >
             </div>
