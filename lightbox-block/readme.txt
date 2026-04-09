@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Tested up to: 6.9
-Stable tag: 1.1.41
+Stable tag: 1.1.42
 Requires at least: 6.5+
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -149,6 +149,9 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.1.42 - 9 April, 2026 =
+* Added a new aspect ratio feature for the slider layout.
 
 = 1.1.41 - 6 April, 2026 =
 * Added a new modern dashboard;
@@ -306,6 +309,9 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 
 == Upgrade Notice ==
+
+= 1.1.42 - 9 April, 2026 =
+* Added a new aspect ratio feature for the slider layout.
 
 = 1.1.41 - 6 April, 2026 =
 * Added a new modern dashboard;
