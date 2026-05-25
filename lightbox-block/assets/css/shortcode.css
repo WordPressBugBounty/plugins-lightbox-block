@@ -13,6 +13,10 @@
     color: #fff;
     padding: 4px 10px;
     border-radius: 3px;
+    max-width: 100% !important;
+    width: auto !important;
+    min-width: 250px;
+    display: inline-block;
 }
 
 .bsbFrontShortcode .tooltip {

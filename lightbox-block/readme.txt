@@ -2,12 +2,12 @@
 Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
-Tested up to: 6.9
-Stable tag: 1.1.42
-Requires at least: 6.5+
+Requires at least: 6.5
+Stable tag: 1.1.43
+Tested up to: 7.0
 Requires PHP: 7.1
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Lightbox Block lets you display images, audio, video, and custom content in responsive lightbox galleries or media popups.
 
@@ -149,6 +149,17 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.1.43 - 23 May, 2026 =
+* Lightbox Top Bar (Left): Zoom In and Zoom Out controls.
+* Lightbox Top Bar (Right): Slideshow, Thumbnails, and Close buttons.
+* Custom Styling: Fully customizable Lightbox background colors.
+* Typography & Captions: Customizable caption typography (fonts) and colors.
+* Advanced Player Controls: Includes Restart, Play, Rewind, Fast-Forward, and Progress Bar adjustment options.
+* Close Icon Customization: Easily adjust the Close icon size, default colors, and hover colors.
+* Fix: Resolved gallery image reordering issue where rearranged images were not saving or updating correctly in the slider.
+* Feature/Enhancement: Added letterboxing (black borders on left/right sides) for portrait images when displayed inside a landscape slider format to maintain aspect ratio.
+* Modal padding problem fix for Iframe.
 
 = 1.1.42 - 9 April, 2026 =
 * Added a new aspect ratio feature for the slider layout.
@@ -467,3 +478,47 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 = 1.0.0 =
 * Initial Release
+
+
+== Source Code ==
+
+You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
+[**Lightbox Block on GitHub**](https://github.com/bPlugins/lightbox-block-free)
+
+== Third-party Libraries ==
+
+= @fancyapps/ui (Fancybox & Carousel) =
+* Used for: Lightbox popup, carousel slider, and thumbnail navigation
+* Version: 5.0.36
+* Source: https://fancyapps.com/
+* License: Fancyapps UI License
+* License URI: https://fancyapps.com/pricing/
+
+= Font Awesome Free =
+* Used for: Icons throughout the plugin interface
+* Version: 6.4.2
+* Source: https://fontawesome.com/
+* License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+* License URI: https://fontawesome.com/license/free
+
+= Plyr =
+* Used for: Audio and video media player controls
+* Version: 3.x
+* Source: https://plyr.io/
+* License: MIT
+* License URI: https://opensource.org/licenses/MIT
+
+
+= bpl-tools =
+* Source / GitHub: https://github.com/bPlugins/bpl-tools
+* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
+
+= Freemius Lite SDK =
+
+* **Source:** [https://bplugins.com/](https://bplugins.com/)
+* **GitHub:** [https://github.com/bPlugins/freemius-lite-sdk](https://github.com/bPlugins/freemius-lite-sdk)
+* **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Purpose:** Provides an opt-in consent form for usage tracking and analytics to help improve the plugin. No data is sent before explicit user consent.
+* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy) and [Freemius Privacy Policy](https://freemius.com/privacy/).

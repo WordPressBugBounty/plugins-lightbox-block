@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) {exit;}
 
-class LPBCustomPost{
+class LBB_Lightbox_Custom_Post{
 	public $post_type = 'lbb';
 
 	public function __construct(){
@@ -18,20 +18,20 @@ class LPBCustomPost{
 
 		register_post_type( $this->post_type, [
 			'labels'				=> [
-				'name'			=> __( 'Lightbox', 'lightbox' ),
-				'singular_name'	=> __( 'Lightbox', 'lightbox' ),
-				'menu_name'     => __( 'Lightbox', 'lightbox' ),
-				'all_items'     => __( 'All Lightboxes', 'lightbox' ),
-				'add_new'		=> __( 'Add New', 'lightbox' ),
-				'add_new_item'	=> __( ' &#8627; Add New Lightbox', 'lightbox' ),
-				'edit_item'		=> __( 'Edit', 'lightbox' ),
-				'new_item'		=> __( 'New', 'lightbox' ),
-				'view_item'		=> __( 'View', 'lightbox' ),
-				'item_published' => __('Publish Lightbox', 'lightbox'),
-				'item_updated'	=> __('Update Lightbox', 'lightbox'),
-				'item_trashed'  => __('Lightbox trashed', 'lightbox'),
-				'search_items'	=> __( 'Search', 'lightbox'),
-				'not_found'		=> __( 'Sorry, we couldn\'t find the that you are looking for.', 'lightbox' )
+				'name'			=> __( 'Lightbox', 'lightbox-block' ),
+				'singular_name'	=> __( 'Lightbox', 'lightbox-block' ),
+				'menu_name'     => __( 'Lightbox', 'lightbox-block' ),
+				'all_items'     => __( 'All Lightboxes', 'lightbox-block' ),
+				'add_new'		=> __( 'Add New', 'lightbox-block' ),
+				'add_new_item'	=> __( ' &#8627; Add New Lightbox', 'lightbox-block' ),
+				'edit_item'		=> __( 'Edit', 'lightbox-block' ),
+				'new_item'		=> __( 'New', 'lightbox-block' ),
+				'view_item'		=> __( 'View', 'lightbox-block' ),
+				'item_published' => __('Publish Lightbox', 'lightbox-block'),
+				'item_updated'	=> __('Update Lightbox', 'lightbox-block'),
+				'item_trashed'  => __('Lightbox trashed', 'lightbox-block'),
+				'search_items'	=> __( 'Search', 'lightbox-block'),
+				'not_found'		=> __( 'Sorry, we couldn\'t find the that you are looking for.', 'lightbox-block' )
 			],
 			'public'				=> false,
 			'show_ui'				=> true, 		
@@ -51,7 +51,15 @@ class LPBCustomPost{
 	}
 
 	public function onAddShortcode( $atts ) {
-        $post_id = $atts['id'];
+        $atts = shortcode_atts( array(
+            'id' => 0,
+        ), $atts, 'lbb-lightbox-block' );
+
+        $post_id = absint( $atts['id'] );
+        if ( ! $post_id ) {
+            return '';
+        }
+
         $post = get_post( $post_id );
         if ( !$post ) {
             return '';
@@ -81,6 +89,9 @@ class LPBCustomPost{
 	
     public function displayContent( $post ){
         $blocks = parse_blocks( $post->post_content );
+        if ( empty( $blocks ) ) {
+            return '';
+        }
         return render_block( $blocks[0] );
     }
 
@@ -93,10 +104,11 @@ class LPBCustomPost{
 
 	function manageBSBPostsCustomColumns( $column_name, $post_ID ) {
 		if ( $column_name == 'shortcode' ) {
-			echo "<div class='bsbFrontShortcode' id='bsbFrontShortcode-$post_ID'>
-				<input value='[lbb-lightbox-block id=$post_ID]' onclick='bsbHandleShortcode( $post_ID )'>
+			$safe_id = intval( $post_ID );
+			echo "<div class='bsbFrontShortcode' id='bsbFrontShortcode-" . esc_attr( $safe_id ) . "'>
+				<input value='[lbb-lightbox-block id=" . esc_attr( $safe_id ) . "]' onclick='bsbHandleShortcode( " . esc_attr( $safe_id ) . " )'>
 				<span class='tooltip'>Copy To Clipboard</span>
-			</div>";
+			</div>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- All dynamic values are escaped with esc_attr() and intval().
 		}
 	}
 
@@ -107,4 +119,4 @@ class LPBCustomPost{
 		return $use;
 	}
 }
-new LPBCustomPost();
+new LBB_Lightbox_Custom_Post();

@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "lbb/lightbox",
   "title": "Lightbox Block",
   "description": "Lightbox block is an excellent choice for your WordPress Lightbox Block.",
@@ -9,7 +9,7 @@
     "lightbox",
     "gutenberg-block"
   ],
-  "textdomain": "lightbox",
+  "textdomain": "lightbox-block",
   "attributes": {
     "align": {
       "type": "string",
@@ -56,17 +56,18 @@
     },
     "columnGap": {
       "type": "string",
-      "default": "25px"
+      "default": "10px"
     },
     "rowGap": {
       "type": "string",
-      "default": "25px"
+      "default": "10px"
     },
     "content": {
       "type": "object",
       "default": {
         "caption": false,
-        "overlyColor": false
+        "overlyColor": false,
+        "lightboxCaption": true
       }
     },
     "button": {
