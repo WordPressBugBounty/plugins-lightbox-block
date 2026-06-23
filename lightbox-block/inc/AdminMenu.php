@@ -44,6 +44,7 @@ if(!class_exists('LBB_Lightbox_Admin_Menu')) {
                 id='lbbDashboard'
                 data-info='<?php echo esc_attr( wp_json_encode( [
                     'version' => LBB_LIGHTBOX_PLUGIN_VERSION,
+                    'adminUrl' => admin_url(),
                 ] ) ); ?>'
             >
             </div>
