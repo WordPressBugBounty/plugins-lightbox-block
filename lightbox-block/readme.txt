@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Requires at least: 6.5
-Stable tag: 1.1.44
+Stable tag: 1.1.45
 Tested up to: 7.0
 Requires PHP: 7.1
 License: GPLv2 or later
@@ -149,6 +149,9 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.1.45 - 17 July, 2026 =
+* When I added a block from the block editor search, I was not getting CSS and JS, but now it is fixed.
 
 = 1.1.44- 23 June, 2026 =
 * Update: Added new modern dashboard.
@@ -322,7 +325,10 @@ Please report security bugs found in the source code of the LightBox Block plugi
 * Initial Release
 
 
-== Upgrade Notice == 
+== Upgrade Notice ==
+
+= 1.1.45 - 17 July, 2026 =
+* When I added a block from the block editor search, I was not getting CSS and JS, but now it is fixed.
 
 = 1.1.44- 23 June, 2026 =
 * Update: Added new modern dashboard.
