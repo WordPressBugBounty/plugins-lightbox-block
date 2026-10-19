@@ -1,10 +1,10 @@
-=== All In One Lightbox – Display Images, Audio, and Video in Popups ===
+=== All In One Lightbox – show any media in beautiful popups ===
 Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Requires at least: 6.5
-Stable tag: 1.1.45
-Tested up to: 7.0
+Stable tag: 1.2.0
+Tested up to: 7.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,12 @@ The plugin is fully responsive, so your popups look good on desktops, tablets, a
 - **Independent Galleries** – Display multiple galleries on one site, each working separately.
 - **Layout Options** – Choose between the default grid or the Masonry layout for creative displays.
 - **Custom Layout Controls** – Adjust row/column gaps and layout spacing for better design control.
+- **Lazy Load (New)** – Gallery images load only when visitors scroll near them, with your own load distance and delay. Works for every media type.
+- **Responsive Images & Retina (New)** – Each screen gets the right image size through srcset, sharp on 2x/3x screens, with the thumbnail size you choose.
+- **WebP Images (New)** – Convert gallery images to WebP on your own server (usually 25–40% smaller). No external service or API key; original files are kept.
+- **Loaded Effect, Placeholder & Loading Icon (New)** – Fade, zoom, slide or blur images in, show a color box or a spinner while they load.
+- **Crop Position (New)** – Pick which part of the image stays visible when it is cropped to the grid box.
+- **Lazy-load Plugin Compatibility (New)** – Works alongside WP Rocket, LiteSpeed, Smush, Jetpack and others, with a notice when one of them is active.
 
 === LightBox Block Pro – Unlock Premium Features ===
 The [Pro version](https://bplugins.com/products/lightbox-block/pricing) adds more flexibility and advanced controls for managing video playback and customization:
@@ -57,6 +63,11 @@ The [Pro version](https://bplugins.com/products/lightbox-block/pricing) adds mor
 - **Gallery Styling Options** – Customize border radius and choose from five aspect ratios (Landscape, Square, Horizontal, Vertical, Portrait).
 - **Color & Size Controls** – Personalize the modal background, close icon colors, and adjust modal/icon sizes per device.
 - **Slider Layout** – Use a slider format for galleries instead of grid or masonry when needed.
+- **Global Lazy Load Settings (New)** – Set lazy load once for every gallery from Lightbox → Settings, with a live preview; any gallery can still use its own settings.
+- **10 Loading Icons + Your Own (New)** – Material, iOS lines, ripple, grid and more, or upload a GIF/SVG/PNG loader, with icon size and color.
+- **Blur Placeholder / LQIP (New)** – A tiny blurred preview fades into the sharp image.
+- **One-click WebP Conversion (New)** – Convert every gallery image at once with your own quality setting.
+- **Pagination (New)** – Load More button, Infinite Scroll or Numbered Pages for big galleries, with items per page, a "Showing X of Y" counter and global or per-gallery button style.
 
 
 [Try the Pro Version](https://bplugins.com/products/lightbox-block/pricing) – Unlock all premium features today!
@@ -79,6 +90,12 @@ Follow these steps:
 That’s it!
 
 [Live Demo](https://bplugins.com/products/lightbox-block/#demos) | [Try the Pro Version](https://bplugins.com/products/lightbox-block/pricing)
+
+=== Make Your Galleries Load Fast – Lazy Load Tutorial ===
+
+https://www.youtube.com/watch?v=XZCoyDO768M
+
+See how Lazy Load, WebP, Thumbnail Size, Loaded Effects and Pagination make a 30-photo gallery open with 0.46 MB instead of 11.9 MB.
 
 = Feedback =
 - Did you Like that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
@@ -149,6 +166,18 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.2.0 - 19 Oct, 2026 =
+* New: Lazy Load for gallery images — load distance, delay, loaded effect, color placeholder and loading spinner (block → General → Lazy Load).
+* New: Responsive images (srcset) with a Thumbnail Size option; Retina screens get sharper files automatically.
+* New: WebP images, converted in the background on your own server; the lightbox shows the WebP copy and Download still gives the original file.
+* New: Crop Position (3×3 grid) for cropped gallery images.
+* New: Notice when another lazy-load plugin (WP Rocket, LiteSpeed, Smush, Jetpack…) is active; gallery images are marked so those plugins skip them.
+* New: Lightbox → Settings page, and a "Try it in a new page" button that opens a page with a Lightbox block ready.
+* Improvement: Audio files are no longer downloaded until they are played.
+* Improvement: The lightbox thumbnail strip uses small thumbnails instead of full-size images.
+* Fix: Portrait images in the grid no longer show black bars on both sides.
+* Fix: Cloudflare Stream videos showed their thumbnail twice and loaded before being opened.
 
 = 1.1.45 - 17 July, 2026 =
 * When I added a block from the block editor search, I was not getting CSS and JS, but now it is fixed.
@@ -326,6 +355,9 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 
 == Upgrade Notice ==
+
+= 1.2.0 - 19 Oct, 2026 =
+* New: Lazy Load, WebP images and responsive srcset make big galleries open much faster. It’s on by default; adjust it in the block under General → Lazy Load.
 
 = 1.1.45 - 17 July, 2026 =
 * When I added a block from the block editor search, I was not getting CSS and JS, but now it is fixed.
