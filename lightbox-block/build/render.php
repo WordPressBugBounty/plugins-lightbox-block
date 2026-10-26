@@ -26,6 +26,18 @@
         }
     }
 
+    // Item URLs come from post content (Contributor+), so only http(s) or relative URLs reach view.js
+    foreach ( $items as $index => $item ) {
+        $type = in_array( $lightboxType, [ 'gallery', 'button' ], true ) ? ( $item['type'] ?? '' ) : $lightboxType;
+        if ( in_array( $type, [ 'image', 'video', 'youtube', 'audio', 'pdf', 'iframe' ], true ) && isset( $item['content'] ) ) {
+            $items[ $index ]['content'] = esc_url_raw( (string) $item['content'], [ 'http', 'https' ] );
+        }
+        if ( isset( $item['thumbnail'] ) ) {
+            $items[ $index ]['thumbnail'] = esc_url_raw( (string) $item['thumbnail'], [ 'http', 'https' ] );
+        }
+    }
+    $attributes['items'] = $items;
+
     // Responsive images map: grid thumbnail URL => smaller sizes + srcset, read by view.js
     $lazySettings = wp_parse_args( is_array( $lazyLoad ?? null ) ? $lazyLoad : [], [ 'enabled' => true, 'thumbSize' => 'large' ] );
     $lazyEnabled = (bool) apply_filters( 'lbb_lazy_load_enabled', rest_sanitize_boolean( $lazySettings['enabled'] ), $attributes );
