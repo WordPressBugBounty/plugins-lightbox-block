@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Requires at least: 6.5
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Tested up to: 7.1
 Requires PHP: 7.1
 License: GPLv2 or later
@@ -166,6 +166,12 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.2.2 - 27 Oct, 2026 =
+* Fix: Portrait images were cropped at the top and bottom inside the lightbox.
+* Fix: Links in the lightbox caption used the theme link color and could be hard to read; they now use the caption text color.
+* Fix: HTML in the gallery caption showed as raw tags.
+* Security: Caption links can no longer use style or class, so a link cannot be stretched invisibly over the whole lightbox.
 
 = 1.2.1 - 26 Oct, 2026 =
 * Security: Fixed a stored XSS issue where a Contributor could add a javascript: link as a video item URL. Item URLs now only allow http and https, and only real https://*.cloudflarestream.com links load in the Cloudflare Stream player.
@@ -359,6 +365,12 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 
 == Upgrade Notice ==
+
+= 1.2.2 - 27 Oct, 2026 =
+* Portrait images are no longer cropped in the lightbox, and captions with HTML or links display correctly.
+
+= 1.2.1 - 26 Oct, 2026 =
+* Security update: fixes a stored XSS issue that a Contributor-level user could exploit through a video item URL. Cloudflare Stream videos also play in the lightbox again. Please update right away.
 
 = 1.2.0 - 19 Oct, 2026 =
 * New: Lazy Load, WebP images and responsive srcset make big galleries open much faster. It’s on by default; adjust it in the block under General → Lazy Load.

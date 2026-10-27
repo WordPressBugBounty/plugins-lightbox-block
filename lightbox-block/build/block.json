@@ -183,7 +183,8 @@
     "image": {
       "type": "object",
       "default": {
-        "ratio": "4:3"
+        "ratio": "4:3",
+        "fit": "cover"
       }
     },
     "lazyLoad": {

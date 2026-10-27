@@ -2,7 +2,7 @@
 /**
  * Plugin Name: All In One Lightbox – show any media in beautiful popups
  * Description: Lightbox block is an excellent choice for your WordPress Lightbox Block.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv2 or later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {exit;}
     if (defined('WP_DEBUG') && WP_DEBUG === true) {
         define('LBB_LIGHTBOX_PLUGIN_VERSION', time());
     } else {
-        define('LBB_LIGHTBOX_PLUGIN_VERSION', '1.2.1');
+        define('LBB_LIGHTBOX_PLUGIN_VERSION', '1.2.2');
     }
     
     define('LBB_LIGHTBOX_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
