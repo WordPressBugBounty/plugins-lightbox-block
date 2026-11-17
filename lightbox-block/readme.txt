@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, btechnologies, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lightbox, popup, slider, Gutenberg block
 Requires at least: 6.5
-Stable tag: 1.2.2
+Stable tag: 1.3.0
 Tested up to: 7.1
 Requires PHP: 7.1
 License: GPLv2 or later
@@ -166,6 +166,14 @@ Please report security bugs found in the source code of the LightBox Block plugi
 10. Short-Code
 
 == Changelog ==
+
+= 1.3.0 - 14 Nov, 2026 =
+* New: Auto Lightbox (Lightbox → Settings → Auto Lightbox). One switch opens every WordPress Image and Gallery block image in the lightbox across the whole site, old posts included. No block to insert.
+* New: Auto Lightbox also opens images added with the Classic editor (classic posts, Classic block, images with a caption).
+* New: Auto Lightbox for WooCommerce product descriptions: images and galleries in the Description tab open in the lightbox, with their own on/off switch in the new WooCommerce card.
+* Improvement: Gallery images open as one set with Next / Previous and thumbnails; images linked to another page keep their link, and the "no-lightbox" CSS class leaves an image out.
+* Improvement: WordPress's own "Expand on click" is turned off for these images, so only one lightbox opens.
+* Improvement: Auto Lightbox images can be opened from the keyboard, and the script loads only on pages that have such an image.
 
 = 1.2.2 - 27 Oct, 2026 =
 * Fix: Portrait images were cropped at the top and bottom inside the lightbox.
@@ -365,6 +373,9 @@ Please report security bugs found in the source code of the LightBox Block plugi
 
 
 == Upgrade Notice ==
+
+= 1.3.0 - 14 Nov, 2026 =
+* New: Auto Lightbox opens the Image and Gallery block images on your whole site in the lightbox, old posts included. It is off after the update; turn it on in Lightbox → Settings → Auto Lightbox.
 
 = 1.2.2 - 27 Oct, 2026 =
 * Portrait images are no longer cropped in the lightbox, and captions with HTML or links display correctly.

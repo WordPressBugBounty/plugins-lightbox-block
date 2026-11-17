@@ -15,6 +15,8 @@
 
     $contentBlock = [];
 
+    // Images inside our own "content" items already open in this block's lightbox, so Auto Lightbox skips them
+    if ( class_exists( 'LBBAutoLightbox' ) ) LBBAutoLightbox::$paused++;
     foreach ($items as $index => $item) {
         if ($item['type'] === 'content' || $lightboxType === "content") {
             $blocks = parse_blocks($item['content']);
@@ -25,6 +27,7 @@
             $contentBlock[$index] = $content;
         }
     }
+    if ( class_exists( 'LBBAutoLightbox' ) ) LBBAutoLightbox::$paused--;
 
     // Item URLs come from post content (Contributor+), so only http(s) or relative URLs reach view.js
     foreach ( $items as $index => $item ) {

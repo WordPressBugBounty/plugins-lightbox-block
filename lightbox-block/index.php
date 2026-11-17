@@ -2,7 +2,7 @@
 /**
  * Plugin Name: All In One Lightbox – show any media in beautiful popups
  * Description: Lightbox block is an excellent choice for your WordPress Lightbox Block.
- * Version: 1.2.2
+ * Version: 1.3.0
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv2 or later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {exit;}
     if (defined('WP_DEBUG') && WP_DEBUG === true) {
         define('LBB_LIGHTBOX_PLUGIN_VERSION', time());
     } else {
-        define('LBB_LIGHTBOX_PLUGIN_VERSION', '1.2.2');
+        define('LBB_LIGHTBOX_PLUGIN_VERSION', '1.3.0');
     }
     
     define('LBB_LIGHTBOX_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
@@ -118,6 +118,8 @@ if (!defined('ABSPATH')) {exit;}
                 require_once plugin_dir_path(__FILE__) . '/inc/custom-shortcode.php';
                 require_once plugin_dir_path(__FILE__) . '/inc/WebP.php';
                 require_once plugin_dir_path(__FILE__) . '/inc/LazyConflicts.php';
+                require_once plugin_dir_path(__FILE__) . '/inc/AutoLightbox.php';
+                require_once plugin_dir_path(__FILE__) . '/inc/BFCMNotice.php';
             }
 
             public function bpllb_get_image_id(){
@@ -162,6 +164,17 @@ if (!defined('ABSPATH')) {exit;}
                 $dashboardLink = admin_url( 'edit.php?post_type=lbb&page=lightbox-block' );
 
                 $links['dashboard'] = sprintf( '<a href="%s" style="%s" target="_blank">%s</a>', $dashboardLink, 'color:#4527a4;font-weight:bold', __( 'Dashboard!', 'lightbox-block' ) );
+
+                // Black Friday action link (active until December 5, 2026)
+                if ( time() <= 1796515199 && ( ! function_exists( 'lbb_fs' ) || ! lbb_fs()->can_use_premium_code() ) ) {
+                    $bfcmUrl = 'https://bplugins.com/products/lightbox-block/pricing?utm_source=plugins_page&utm_medium=bfcm_action_link&utm_campaign=bfcm2026';
+                    $links['bfcm'] = sprintf(
+                        '<a href="%s" style="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+                        esc_url( $bfcmUrl ),
+                        'color:#d63638;font-weight:bold;',
+                        __( 'Black Friday: Save 45%!', 'lightbox-block' )
+                    );
+                }
             }
  
             return $links;

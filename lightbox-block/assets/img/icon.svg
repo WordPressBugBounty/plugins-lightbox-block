@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="All In One Lightbox — image gallery popup">
+  <title>All In One Lightbox — gallery lightbox popup</title>
+  <defs>
+    <linearGradient id="lbxTile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D630D2"/>
+      <stop offset="1" stop-color="#9D269A"/>
+    </linearGradient>
+    <radialGradient id="lbxGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lbxDay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd27a"/>
+      <stop offset="1" stop-color="#ff9ec2"/>
+    </linearGradient>
+    <linearGradient id="lbxNight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6a2f9e"/>
+      <stop offset="1" stop-color="#c23ea8"/>
+    </linearGradient>
+    <clipPath id="lbxTileClip"><rect x="0" y="0" width="256" height="256" rx="56"/></clipPath>
+    <clipPath id="lbxPhotoClip"><rect x="82" y="60" width="92" height="66" rx="9"/></clipPath>
+    <style>
+      :root { --lbx: 3.6s; }
+      .lbx-breathe { transform-box: fill-box; transform-origin: 128px 104px;
+        animation: lbxBreathe var(--lbx) ease-in-out infinite; }
+      .lbx-sceneA { animation: lbxFadeA var(--lbx) ease-in-out infinite; }
+      .lbx-sceneB { animation: lbxFadeB var(--lbx) ease-in-out infinite; }
+      .lbx-hl { animation: lbxHl var(--lbx) steps(3) infinite; }
+      @keyframes lbxBreathe {
+        0%   { transform: scale(0.955); }
+        18%  { transform: scale(1); }
+        82%  { transform: scale(1); }
+        100% { transform: scale(0.955); }
+      }
+      @keyframes lbxFadeA {
+        0%{opacity:1} 40%{opacity:1} 50%{opacity:0} 90%{opacity:0} 100%{opacity:1}
+      }
+      @keyframes lbxFadeB {
+        0%{opacity:0} 40%{opacity:0} 50%{opacity:1} 90%{opacity:1} 100%{opacity:0}
+      }
+      @keyframes lbxHl {
+        0%{transform:translateX(0)} 100%{transform:translateX(165px)}
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .lbx-breathe{animation:none;transform:scale(1)}
+        .lbx-sceneA{animation:none;opacity:1}
+        .lbx-sceneB{animation:none;opacity:0}
+        .lbx-hl{animation:none;transform:translateX(0)}
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#lbxTileClip)">
+    <rect x="0" y="0" width="256" height="256" fill="url(#lbxTile)"/>
+    <circle cx="70" cy="60" r="120" fill="#ffffff" opacity="0.08"/>
+    <ellipse cx="128" cy="112" rx="96" ry="82" fill="url(#lbxGlow)" opacity="0.5"/>
+
+    <!-- dimmed page behind the popup -->
+    <rect x="40" y="40" width="176" height="150" rx="16" fill="#3a0e39" opacity="0.28"/>
+
+    <!-- filmstrip thumbnails -->
+    <g>
+      <g>
+        <rect x="50" y="188" width="40" height="34" rx="7" fill="#ffffff" opacity="0.92"/>
+        <circle cx="61" cy="199" r="4" fill="#ffc861"/>
+        <path d="M55 214 L66 203 L74 214 Z" fill="#c23ea8"/>
+      </g>
+      <g>
+        <rect x="105" y="188" width="40" height="34" rx="7" fill="#ffffff" opacity="0.92"/>
+        <path d="M112 214 L120 205 L126 211 L133 200 L138 214 Z" fill="#8f2f9c"/>
+        <circle cx="118" cy="200" r="3.4" fill="#ffc861"/>
+      </g>
+      <g>
+        <rect x="160" y="188" width="40" height="34" rx="7" fill="#ffffff" opacity="0.92"/>
+        <path d="M175 197 L188 205 L175 213 Z" fill="#D630D2"/>
+      </g>
+      <!-- active highlight sliding across thumbs -->
+      <g class="lbx-hl">
+        <rect x="48" y="186" width="44" height="38" rx="9" fill="none" stroke="#ffffff" stroke-width="3"/>
+      </g>
+    </g>
+
+    <!-- popup lightbox card -->
+    <g class="lbx-breathe">
+      <rect x="72" y="50" width="112" height="108" rx="13" fill="#ffffff"/>
+      <g clip-path="url(#lbxPhotoClip)">
+        <rect x="82" y="60" width="92" height="66" fill="#efe7f5"/>
+        <!-- day scene -->
+        <g class="lbx-sceneA">
+          <rect x="82" y="60" width="92" height="66" fill="url(#lbxDay)"/>
+          <circle cx="150" cy="80" r="11" fill="#fff2c4"/>
+          <path d="M82 126 L104 96 L120 116 L136 90 L160 122 L174 122 L174 126 Z" fill="#b8477f"/>
+          <path d="M82 126 L98 108 L114 126 Z" fill="#8f2f6a"/>
+        </g>
+        <!-- night scene -->
+        <g class="lbx-sceneB">
+          <rect x="82" y="60" width="92" height="66" fill="url(#lbxNight)"/>
+          <circle cx="150" cy="80" r="10" fill="#f2e6ff"/>
+          <circle cx="146" cy="77" r="10" fill="#6a2f9e"/>
+          <circle cx="98" cy="74" r="1.4" fill="#ffffff"/>
+          <circle cx="118" cy="70" r="1.2" fill="#ffffff"/>
+          <circle cx="132" cy="98" r="1.2" fill="#ffffff"/>
+          <path d="M82 126 L108 98 L128 122 L146 104 L174 126 Z" fill="#4a1f74"/>
+        </g>
+      </g>
+      <!-- fullscreen corner marks -->
+      <path d="M86 66 L86 74 M86 66 L94 66" stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M170 66 L162 66 M170 66 L170 74" stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M86 120 L86 112 M86 120 L94 120" stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M170 120 L170 112 M170 120 L162 120" stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <!-- caption lines -->
+      <rect x="82" y="134" width="60" height="7" rx="3.5" fill="#D630D2" opacity="0.85"/>
+      <rect x="82" y="146" width="40" height="5" rx="2.5" fill="#c9b8d1"/>
+    </g>
+  </g>
+</svg>

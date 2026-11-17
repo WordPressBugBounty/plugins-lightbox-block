@@ -28,7 +28,7 @@ if(!class_exists('LBB_Lightbox_Admin_Menu')) {
             $menuIcon = "<svg xmlns='http://www.w3.org/2000/svg' width='32px' height='32px' viewBox='0 0 32 32'>
             <path fill='#fff' d='M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z' /><path fill='#fff' d='M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z' /></svg>";
             
-                // Settings page: explains the Pro-only site-wide settings (no settings here)
+                // Settings page: Auto Lightbox (Free) + the Pro-only site-wide settings as notices
                 add_submenu_page(
                     'edit.php?post_type=lbb',
                     __('Settings', 'lightbox-block'),
@@ -77,6 +77,15 @@ if(!class_exists('LBB_Lightbox_Admin_Menu')) {
                     'initialRoute' => is_string( $initialRoute ) ? $initialRoute : '',
                     'version' => LBB_LIGHTBOX_PLUGIN_VERSION,
                     'adminUrl' => admin_url(),
+                    'autoLightbox' => class_exists( 'LBBAutoLightbox' ) ? LBBAutoLightbox::get() : [],
+                    'wooActive' => class_exists( 'WooCommerce' ),
+                    'isPremium' => function_exists( 'lbb_fs' ) && lbb_fs()->can_use_premium_code(),
+                    'bfcm' => [
+                        'show' => class_exists( 'LBB_BFCM_Notice' ) ? LBB_BFCM_Notice::get_instance()->is_active() : false,
+                        'nonce' => wp_create_nonce( 'lbb_bfcm_dismiss_nonce' ),
+                        'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+                        'pricingUrl' => 'https://bplugins.com/products/lightbox-block/pricing?utm_source=plugin_dashboard&utm_medium=bfcm_banner&utm_campaign=bfcm2026',
+                    ],
                 ] ) ); ?>'
             >
             </div>
